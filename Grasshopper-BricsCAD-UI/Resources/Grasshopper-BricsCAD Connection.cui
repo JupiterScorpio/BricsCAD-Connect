@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<CustSection xml:lang="en-US">
+  <MenuGroup Name="Grasshopper">
+    <MacroGroup Name="Grasshopper">
+      <MenuMacro UID="rhino">
+        <Macro>
+          <Name>Rhino</Name>
+          <Command>^c^c_rhino</Command>
+          <HelpString>Launch Rhino</HelpString>
+          <Image ID="Rhino.png"/></Macro>
+      </MenuMacro>
+      <MenuMacro UID="grasshopper">
+        <Macro>
+          <Name>Grasshopper</Name>
+          <Command>^c^c_grasshopper</Command>
+          <HelpString>Launch Grasshopper</HelpString>
+          <Image ID="Grasshopper.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="tograsshopper">
+        <Macro>
+          <Name>ToGrasshopper</Name>
+          <Command>^c^c_tograsshopper</Command>
+          <HelpString>Creates gh parameters using selected object</HelpString>
+          <Image ID="ToGrasshopper.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="attachghdata">
+        <Macro>
+          <Name>AttachGhData</Name>
+          <Command>^c^c_attachghdata</Command>
+          <HelpString>Attach grasshopper data to selected object</HelpString>
+          <Image ID="AttachGhData.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="clearghdata">
+        <Macro>
+          <Name>ClearGhData</Name>
+          <Command>^c^c_clearghdata</Command>
+          <HelpString>Clear grasshopper data attached to selected object</HelpString>
+          <Image ID="ClearGhData.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="bakeghdata">
+        <Macro>
+          <Name>BakeGhData</Name>
+          <Command>^c^c_bakeghdata</Command>
+          <HelpString>Bake grasshopper data attached to selected object</HelpString>
+          <Image ID="BakeGhData.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ghdefinitions">
+        <Macro>
+          <Name>GhDefinitions</Name>
+          <Command>^c^c_ghdefinitions</Command>
+          <HelpString>List of used grasshopper definitions</HelpString>
+          <Image ID="GhDefinitions.png"/>
+        </Macro>
+      </MenuMacro>
+    </MacroGroup>
+    <MenuRoot>
+      <PopMenuRoot>
+        <PopMenu UID="mnGrasshopper">
+          <Alias>Grasshopper</Alias>
+          <Name>&amp;Grasshopper</Name>
+          <PopMenuItem>
+            <NameRef>&amp;Rhino</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="rhino"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem>
+            <NameRef>&amp;Grasshopper</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="grasshopper"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem>
+            <NameRef>&amp;ToGrasshopper</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="tograsshopper"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="true"/>
+          <PopMenuItem>
+            <NameRef>&amp;AttachGhData</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="attachghdata"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem>
+            <NameRef>&amp;ClearGhData</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="clearghdata"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem>
+            <NameRef>&amp;BakeGhData</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="bakeghdata"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem>
+            <NameRef>&amp;GhDefinitions</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ghdefinitions"/>
+            </MenuItem>
+          </PopMenuItem>
+        </PopMenu>
+      </PopMenuRoot>
+      <RibbonRoot>
+        <RibbonTabSourceCollection>
+          <RibbonTabSource Text="Grasshopper" UID="Grasshopper-BricsCAD">
+            <Name>Grasshopper</Name>
+            <RibbonPanelSourceReference PanelId="Grasshopper-BricsCAD"/>
+            <RibbonPanelSourceReference PanelId="Grasshopper-data"/>
+          </RibbonTabSource>
+        </RibbonTabSourceCollection>
+        <RibbonPanelSourceCollection>
+          <RibbonPanelSource Text="Grasshopper" UID="Grasshopper-BricsCAD">
+            <Name>Grasshopper</Name>
+            <RibbonRow>
+              <RibbonCommandButton ButtonStyle="LargeWithText" MenuMacroID="rhino" Text="Rhino"/>
+              <RibbonCommandButton ButtonStyle="LargeWithText" MenuMacroID="grasshopper" Text="Grasshopper"/>
+            </RibbonRow>
+          </RibbonPanelSource>
+          <RibbonPanelSource Text="Grasshopper data" UID="Grasshopper-data">
+            <Name>Grasshopper data</Name>
+            <RibbonRow>
+              <RibbonSplitButton ButtonStyle="LargeWithText">
+                <RibbonCommandButton MenuMacroID="attachghdata" Text="Attach GhData"/>
+                <RibbonCommandButton MenuMacroID="clearghdata" Text="Clear GhData"/></RibbonSplitButton>
+              <RibbonCommandButton ButtonStyle="LargeWithText" MenuMacroID="bakeghdata" Text="Bake GhData"/>
+              <RibbonCommandButton ButtonStyle="LargeWithText" MenuMacroID="ghdefinitions" Text="GhDefinitions"/>
+            </RibbonRow>
+          </RibbonPanelSource>
+        </RibbonPanelSourceCollection>
+      </RibbonRoot>
+      <MouseButtonRoot/>
+      <DoubleClickRoot/>
+      <DigitizerButtonRoot/>
+      <TabletMenuRoot/>
+      <QuadRoot>
+        <QuadTabs>
+          <QuadTab ID="qt_Grasshopper-BricsCAD Connection" Name="Grasshopper" NameRef="Grasshopper">
+            <QuadButton ID="rhino" QuadAnalyzerId="CUI.Grasshopper"/>
+            <QuadButton ID="grasshopper" QuadAnalyzerId="CUI.Grasshopper"/>
+            <QuadButton ID="tograsshopper" QuadAnalyzerId="CUI.Grasshopper"/>
+            <QuadButton ID="attachghdata" QuadAnalyzerId="CUI.Grasshopper"/>
+            <QuadButton ID="clearghdata" QuadAnalyzerId="5F6982C0-0E9A-490F-9A34-273B090E6EC9"/>
+            <QuadButton ID="bakeghdata" QuadAnalyzerId="5F6982C0-0E9A-490F-9A34-273B090E6EC9"/>
+            <QuadButton ID="ghdefinitions" QuadAnalyzerId="CUI.Grasshopper"/>
+          </QuadTab>
+        </QuadTabs>
+        <QuadButtons>
+          <QuadButton MenuMacroID="rhino">
+            <Filter Alias="NO_SELECTION"/>
+          </QuadButton>
+          <QuadButton MenuMacroID="grasshopper">
+            <Filter Alias="NO_SELECTION"/>
+          </QuadButton>
+          <QuadButton MenuMacroID="tograsshopper">
+            <Filter Alias="OBJECT_ANY"/>
+            <Filter Alias="OBJECTS_ANY"/>
+            <Filter Alias="OBJECT_3DSOLID_EDGE"/>
+            <Filter Alias="OBJECTS_3DSOLID_EDGE"/>
+            <Filter Alias="OBJECT_SURFACE_EDGE"/>
+            <Filter Alias="OBJECTS_SURFACE_EDGE"/>
+            <Filter Alias="OBJECT_REGION_EDGE"/>
+            <Filter Alias="OBJECTS_REGION_EDGE"/>
+            <Filter Alias="OBJECT_3DSOLID_FACE"/>
+            <Filter Alias="OBJECTS_3DSOLID_FACE"/>
+            <Filter Alias="OBJECT_SURFACE_FACE"/>
+            <Filter Alias="OBJECTS_SURFACE_FACE"/>
+          </QuadButton>
+          <QuadButton MenuMacroID="attachghdata">
+            <Filter Alias="OBJECT_ANY"/>
+            <Filter Alias="OBJECTS_ANY"/>
+          </QuadButton>
+          <QuadButton MenuMacroID="ghdefinitions">
+            <Filter Alias="NO_SELECTION"/>
+          </QuadButton>
+        </QuadButtons>
+      </QuadRoot>
+      <ToolbarRoot>
+        <Toolbar ToolbarOrient="floating" ToolbarVisible="hide" UID="tbGrasshopper-BricsCAD" rows="1">
+          <Alias>TB_Grasshopper-BricsCAD</Alias>
+          <Name>Grasshopper</Name>
+          <ToolbarButton>
+            <Name>Rhino</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="rhino"/>
+            </MenuItem>
+          </ToolbarButton>
+          <ToolbarButton>
+            <Name>Grasshopper</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="grasshopper"/>
+            </MenuItem>
+          </ToolbarButton>
+          <ToolbarButton>
+            <Name>ToGrasshopper</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="tograsshopper"/>
+            </MenuItem>
+          </ToolbarButton>
+          <ToolbarButton IsSeparator="true"/>
+          <ToolbarButton>
+            <Name>AttachGhData</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="attachghdata"/>
+            </MenuItem>
+          </ToolbarButton>
+          <ToolbarButton>
+            <Name>ClearGhData</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="clearghdata"/>
+            </MenuItem>
+          </ToolbarButton>
+          <ToolbarButton>
+            <Name>BakeGhData</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="bakeghdata"/>
+            </MenuItem>
+          </ToolbarButton>
+          <ToolbarButton>
+            <Name>GhDefinitions</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="ghdefinitions"/>
+            </MenuItem>
+          </ToolbarButton>
+        </Toolbar>
+      </ToolbarRoot>
+    </MenuRoot>
+  </MenuGroup>
+</CustSection>

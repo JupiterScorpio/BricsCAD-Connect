@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C7D33E00-54F4-4D35-8AA8-9BCBF5F3AD6A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GH_BC</RootNamespace>
+    <AssemblyName>Grasshopper-BricsCAD-Connection</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BrxMgd">
+      <HintPath>..\Thirdparty\BrxMgd\BrxMgd.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Eto">
+      <HintPath>..\Thirdparty\Rhino7\Eto.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GH_IO">
+      <HintPath>..\Thirdparty\Rhino7\GH_IO.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Grasshopper">
+      <HintPath>..\Thirdparty\Rhino7\Grasshopper.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Rhino.UI">
+      <HintPath>..\Thirdparty\Rhino7\Rhino.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RhinoCommon">
+      <HintPath>..\Thirdparty\Rhino7\RhinoCommon.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="TD_Mgd">
+      <HintPath>..\Thirdparty\BrxMgd\TD_Mgd.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TD_MgdBrep">
+      <HintPath>..\Thirdparty\BrxMgd\TD_MgdBrep.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GhDataManaged">
+      <HintPath>$(SolutionDir)GrasshopperDataManaged\bin\$(Configuration)\GhDataManaged.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands.cs" />
+    <Compile Include="Convert.cs" />
+    <Compile Include="DatabaseUtils.cs" />
+    <Compile Include="GhBcConnection.cs" />
+    <Compile Include="GhDefinitionManager.cs" />
+    <Compile Include="GhDrawingContext.cs" />
+    <Compile Include="GH\Components\BakeComponent.cs" />
+    <Compile Include="GH\Components\Blocks.cs" />
+    <Compile Include="GH\Components\BuildingElement.cs" />
+    <Compile Include="GH\Components\DocumentElements.cs" />
+    <Compile Include="GH\Components\Ifc.cs" />
+    <Compile Include="GH\Components\LinearSolid.cs" />
+    <Compile Include="GH\Components\Profiles.cs" />
+    <Compile Include="GH\Components\Properties.cs" />
+    <Compile Include="GH\Components\RenderMaterial.cs" />
+    <Compile Include="GH\Components\SpatialLocation.cs" />
+    <Compile Include="GH\GeometryParam.cs" />
+    <Compile Include="GH\ParameterTypes.cs" />
+    <Compile Include="GrasshopperPlayer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Rhinoceros.cs" />
+    <Compile Include="SelectionUtils.cs" />
+    <Compile Include="UI\BakeUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\GhDefinitionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\GhDefinitionDialog.Designer.cs">
+      <DependentUpon>GhDefinitionDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\GhUI.cs" />
+    <Compile Include="UI\ModalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\WinAPI.cs" />
+    <Compile Include="Visualization\CompoundDrawable.cs" />
+    <Compile Include="Visualization\GhDataOverrule.cs" />
+    <Compile Include="Visualization\GrasshopperPreview.cs" />
+    <Compile Include="Visualization\TransientDrawable.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BakeUI.resx">
+      <DependentUpon>BakeUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\GhDefinitionDialog.resx">
+      <DependentUpon>GhDefinitionDialog.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bake.png" />
+    <None Include="Resources\bakebuildingelement.png" />
+    <None Include="Resources\blocks.png" />
+    <None Include="Resources\building.png" />
+    <None Include="Resources\curve.png" />
+    <None Include="Resources\documentelements.png" />
+    <None Include="Resources\edge.png" />
+    <None Include="Resources\elementtype.png" />
+    <None Include="Resources\entity.png" />
+    <None Include="Resources\face.png" />
+    <None Include="Resources\ifcexport.png" />
+    <None Include="Resources\insertblock.png" />
+    <None Include="Resources\linearsolid.png" />
+    <None Include="Resources\link.png" />
+    <None Include="Resources\plane.png" />
+    <None Include="Resources\point.png" />
+    <None Include="Resources\profile.png" />
+    <None Include="Resources\profileinfo.png" />
+    <None Include="Resources\profilename.png" />
+    <None Include="Resources\profilesize.png" />
+    <None Include="Resources\propertycategories.png" />
+    <None Include="Resources\propertynames.png" />
+    <None Include="Resources\propertyvalue.png" />
+    <None Include="Resources\setproperty.png" />
+    <None Include="Resources\story.png" />
+    <None Include="Resources\vertex.png" />
+    <None Include="Resources\rendermaterial.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="grasshopper_settings.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy $(ProjectDir)grasshopper_settings.xml $(TargetDir) /Y
+xcopy $(SolutionDir)GrasshopperData\bin\$(Configuration)\*.dll $(TargetDir) /Y
+xcopy $(SolutionDir)GrasshopperDataManaged\bin\$(Configuration)\*.dll $(TargetDir) /Y</PostBuildEvent>
+  </PropertyGroup>
+</Project>
